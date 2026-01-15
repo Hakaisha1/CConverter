@@ -39,3 +39,6 @@ api-test.js
 *.sln
 *.sw?
 *.swp
+
+*storybook.log
+storybook-static

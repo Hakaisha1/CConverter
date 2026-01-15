@@ -85,7 +85,7 @@ export default function CurrencyConverter() {
 
     return (
         <div className="min-h-screen bg-[var(--paper)] py-12 px-4">
-            <div className="max-w-2x1 mx-auto">
+            <div className="max-w-2xl mx-auto">
                 {/* header */}
                 <div className="max-w-2xl mb-8">
                     <h1 className="display text-6xl font-semibold text-[var(--ink)] mb-2">
