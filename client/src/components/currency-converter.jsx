@@ -24,7 +24,6 @@ export default function CurrencyConverter() {
         try {
             setLoading(true);
             const data = await getCurrencies();
-            console.log('Currencies data:', data);
             setCurrencies(data.currencies || []);
             setError(null);
         } catch (err) {
@@ -56,7 +55,6 @@ export default function CurrencyConverter() {
             setLoading(true);
             setError(null);
             const data = await convertCurrency(fromCurrency, toCurrency, validation.value);
-            console.log('Convert result:', data);
             setResult(data);
         } catch (err) {
             console.error('Convert error:', err);

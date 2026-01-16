@@ -15,7 +15,6 @@ export default function ConversionHistory() {
         try {
             setLoading(true);
             const data = await getConversionHistory(limit);
-            console.log('History data:', data); // Debug
             setHistory(data || []);
             setError(null);
         } catch (err) {
