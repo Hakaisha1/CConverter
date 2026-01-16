@@ -82,11 +82,11 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="min-h-screen bg-[var(--paper)] py-12 px-4">
+        <div id="convert" className="min-h-screen bg-var(--paper) py-12 px-4">
             <div className="max-w-2xl mx-auto">
                 {/* header */}
                 <div className="max-w-2xl mb-8">
-                    <h1 className="display text-6xl font-semibold text-[var(--ink)] mb-2">
+                    <h1 className="display text-6xl font-semibold text-(--ink) mb-2">
                         CConverter
                     </h1>
                     <p className="text-gray-600">
@@ -126,7 +126,7 @@ export default function CurrencyConverter() {
                         <button
                             onClick={handleSwap}
                             disabled={loading}
-                            className="p-3 rounded-full border border-[var(--line)] hover:bg-black/5 transition-colors disabled:opacity-50"
+                            className="p-3 rounded-full border border-var(--line) hover:bg-black/5 transition-colors disabled:opacity-50"
                         >  
                         </button>
                     </div>

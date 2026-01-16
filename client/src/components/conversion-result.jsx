@@ -10,15 +10,15 @@ export default function ConversionResult({ from, to, amount, result, rate }) {
                     <p className="text-3xl font-bold text-gray-800">{formatNumber(amount, 2)}</p>
                 </div>
 
-                <ArrowRight className="text-[var(--muted)]" size={32}/>
+                <ArrowRight className="text-var(--muted)" size={32}/>
 
                 <div className="flex-1 text-right">
                     <p className="text-sm text-gray-600 mb-1">{to}</p>
-                    <p className="text-3xl font-bold text-[var(--ink)]">{formatNumber(result, 2)}</p>
+                    <p className="text-3xl font-bold text-var(--ink)">{formatNumber(result, 2)}</p>
                 </div>
             </div>
 
-            <div className="text-center text-sm text-gray-600 pt-4 border-t border-[var(--line)]">
+            <div className="text-center text-sm text-gray-600 pt-4 border-t border-var(--line)">
                 1 {from} = {formatNumber(rate, 4)} {to}
             </div>
         </div>

@@ -41,7 +41,7 @@ export default function ConversionHistory() {
     return (
         <>
             {/* Desktop */}
-            <div className="hidden md:block card-paper overflow-hidden">
+            <div className="hidden md:block card-paper overflow-hidden" id="conversion-history">
                 <table className="w-full">
                     <thead className="bg-gray-50">
                         <tr>
@@ -65,7 +65,7 @@ export default function ConversionHistory() {
             </div>
 
             {/* Mobile */}
-            <div className="md:hidden space-y-4">
+            <div className="md:hidden space-y-4" id="conversion-history">
                 {history.map((item) => (
                     <div key={item.id} className="card-paper p-4">
                         <div className="text-sm text-gray-600 mb-2">{formatDate(item.created_at)}</div>
