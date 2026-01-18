@@ -1,27 +1,17 @@
-import dotenv from 'dotenv';
-import pkg from 'pg';
+import pkg from '@prisma/client';
+const { PrismaClient } = pkg;
 
-dotenv.config();
-
-const { Pool } = pkg;
-
-const pool = new Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: Number(process.env.DB_PORT),
-  max: Number(process.env.MAX),
-  idleTimeoutMillis: Number(process.env.IDLE_TIMEOUT_MILLIS),
-  connectionTimeoutMillis: Number(process.env.CONNECTION_TIMEOUT_MILLIS),
-  mainapiurl: process.env.MAIN_API_URL,
+const prisma = new PrismaClient({
+  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
 });
 
-pool.on('connect', () => {
-    console.log('Connected to the database');
-});
+// Test connection
+prisma.$connect()
+  .then(() => console.log('Connected to database via Prisma'))
+  .catch((err) => console.error('Failed to connect to database:', err));
 
-export { pool };
+export { prisma };
+
 
 
 

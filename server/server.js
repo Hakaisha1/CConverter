@@ -4,7 +4,7 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import conversionRoutes from './routes/conversion.js';
-import { pool } from './config/database.js';
+import { prisma } from './config/database.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -52,8 +52,8 @@ app.use((req, res) => {
 
 async function startServer() {
     try {
-        // Test database connection
-        await pool.query('SELECT NOW()');
+        // Test database connection via Prisma
+        await prisma.$queryRaw`SELECT NOW()`;
         console.log('Connected to the database successfully.');
 
         app.listen(PORT, () => {
