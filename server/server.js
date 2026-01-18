@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
         message: 'Currency Converter API is running',
         endpoint: {
             convert: '/api/convert',
-            history: '/api/history',
             currencies: '/api/currencies',
             rates: '/api/rates/:base'
         }

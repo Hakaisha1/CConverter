@@ -8,7 +8,7 @@ export default function CurrencySelector({ value, onChange, currencies = [], lab
                 value={value} 
                 onChange={(e) => onChange(e.target.value)} 
                 disabled={disabled || !currencies.length}
-                className="w-full p-3 border var(--line) rounded-lg bg-var(--panel) text-var(--ink) focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full p-3 border var(--line)  bg-var(--panel) text-var(--ink) focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black/20 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {!currencies.length && (
                     <option>Loading...</option>

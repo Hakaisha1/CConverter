@@ -43,7 +43,6 @@ a {
 .card-paper {
 	border: 1px solid var(--line);
 	background: var(--panel);
-	border-radius: 1rem;
 	box-shadow: var(--shadow);
 }
 

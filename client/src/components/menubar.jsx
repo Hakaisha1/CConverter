@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from "react"
+import { useState, useEffect } from "react"
 import { Euro } from 'lucide-react';
 
 
@@ -7,7 +7,6 @@ export default function MenuBar() {
 
     const navLinks = [
         { name: "Convert", id: "convert" },
-        { name: "History", id: "conversion-history" },
     ];
 
     useEffect(() => {
@@ -23,7 +22,7 @@ export default function MenuBar() {
             threshold: 0.3
         });
 
-        const sections = document.querySelectorAll("#convert, #conversion-history");
+        const sections = document.querySelectorAll("#convert");
         sections.forEach(section => observer.observe(section));
 
         return () => observer.disconnect();

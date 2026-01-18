@@ -1,5 +1,4 @@
 import { getRateWithCache, getExchangeRates } from "../services/exchange-rate-services.js";
-import { saveConversion, getConversionHistory } from "../services/database-service.js";
 
 export async function convertCurrency(req, res) {
     try {
@@ -22,7 +21,6 @@ export async function convertCurrency(req, res) {
         }
 
         const result = (parseFloat(amount) * rate).toFixed(2);
-        await saveConversion(fromCurrency, toCurrency, amount, result, rate);
         
         return res.status(200).json({
             from: fromCurrency,
@@ -37,23 +35,6 @@ export async function convertCurrency(req, res) {
     }
 }
 
-export async function getHistory(req, res) {
-    try {
-        let limit = req.query.limit ? parseInt(req.query.limit) : 10;
-        if (limit < 1) {
-            limit = 10;
-        }
-        if (limit > 100) {
-            limit = 100;
-        }
-
-        const history = await getConversionHistory(limit);
-        return res.status(200).json({ history });
-    } catch (error) {
-        console.error('Error in getHistory:', error);
-        return res.status(500).json({ error: 'Internal server error' });
-    }
-}
 
 export async function getCurrencies(req, res) {
     try {

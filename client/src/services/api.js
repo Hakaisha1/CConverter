@@ -33,15 +33,6 @@ export const convertCurrency = async (from, to, amount) => {
     }
 }
 
-export const getConversionHistory = async (limit = 10) => {
-    try {
-        const res = await apiClient.get('/history', { params: { limit } });
-        return res.data.history;
-    } catch (error) {
-        console.error('Error fetching conversion history:', error);
-        throw new Error(error.response?.data?.error || 'Failed to fetch conversion history');
-    }
-}
 
 export const getExchangeRates = async (base) => {
     try {
